@@ -1,0 +1,51 @@
+.btn {
+  height: 44px;
+  padding: 0 45px 0 16px;
+  font-size: 16px;
+  border: none;
+  color: #fff;
+  font-family: map-get($fonts, 'medium');
+  background: map-deep-get($colors, 'theme', 'primary');
+  background-image: url('../images/arrow-white.svg');
+  background-repeat: no-repeat;
+  background-position: 90% 52%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  white-space: nowrap;
+  transition: .25s;
+  letter-spacing: .5px;
+  &:hover {
+    background: map-deep-get($colors, 'theme', 'secondary');
+    background-image: url('../images/arrow-white.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 52%;
+  }
+  
+  &-invert {
+    @extend .btn;
+    color: map-deep-get($colors, 'base', 'black-light');
+    background: transparent;
+    background-image: url('../images/arrow-black.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 52%;
+    border: 1px solid map-deep-get($colors, 'base', 'black-light');
+    &:hover {
+      color: map-deep-get($colors, 'base', 'white');
+      background: map-deep-get($colors, 'base', 'black-light');
+      background-image: url('../images/arrow-white.svg');
+      background-repeat: no-repeat;
+      background-position: 90% 52%;
+    }
+  }
+  &-white {
+    @extend .btn;
+    color: #fff;
+    background: transparent;
+    background-image: url('../images/arrow-white.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 52%;
+    border: 1px solid #fff;
+    cursor: pointer;
+  }
+}

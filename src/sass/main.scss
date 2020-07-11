@@ -1,6 +1,18 @@
-/*
- * Все паршалы импортировать в этот файл
- */
+//* Libs *//
+@import './node_modules/include-media/dist/include-media';
+@import './node_modules/slick-carousel/slick/slick.scss';
 
-@import 'normalize.scss';
-@import 'base.scss';
+//* Abstracts modules *//
+@import 'abstracts/main';
+
+//* Base modules *//
+@import 'base/main';
+
+//* Layout modules *//
+@import 'layout/main';
+
+//* Pages modules *//
+@import 'pages/main';
+
+//* Components *//
+@import 'components/main';

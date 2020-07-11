@@ -1,0 +1,99 @@
+footer {
+  position: relative;
+  z-index: 1;
+}
+.subscribe-panel {
+  background: map-deep-get($colors, 'theme', 'green');
+  padding: 29px 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .subscribe-panel__label {
+      color: #ffffff;
+      height: 46px;
+      width: 309px;
+      color: #FFFFFF;
+      font-family: "Futura PT";
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 23px;
+    }
+    .subscribe-panel__form {
+      width: 800px;
+      display: flex;
+      justify-content: flex-end;
+      input {
+        width: 597px;
+        height: 44px;
+        margin-right: 15px;
+        padding: 13px 18px;
+      }
+    }
+  }
+}
+
+.footer-info {
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-between;
+  &__logo {
+    img {
+      max-width: 175px;
+    }
+    .turkey {
+      margin-top: 76px;
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 15px;
+        max-width: 87px;
+      }
+    }
+  }
+  &__menu {
+    span.title {
+      display: block;
+      font-size: 30px;
+      color: map-deep-get($colors, 'base', 'black-light');
+      margin: 0 0 17px;
+    }
+    ul {
+      @extend %listreset;
+      li {
+        margin: 0 0 19px;
+        a.menu__item {
+          color: map-deep-get($colors, 'base', 'black-light');
+          font-size: map-deeg-get($font-size, 'base');
+          &:hover {
+            color: map-deep-get($colors, 'base', 'link-hover');
+          }
+        }
+      }
+    }
+    .info__menu__call {
+      font-size: map-deeg-get($font-size, 'base');
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      &:before {
+        background-image: url('../images/telephone.svg');
+        width: 26px;
+        height: 24px;
+      }
+      
+    }
+  }
+}
+
+.footer-copy {
+  background: #E8E5E2;
+  padding: 17px 0;
+  a {
+    margin: 0 25px;
+    color: map-deep-get($colors, 'base', 'black-light');
+  }
+}

@@ -1,0 +1,28 @@
+.about {
+  &.container {
+    margin: 50px auto 100px;
+  }
+  &-image {
+    width: 50%;
+    padding-right: 64px;
+    img {
+      height: 435px;
+    }
+  }
+  &-info {
+    width: 50%;
+    h2 {
+      font-size: 42px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 24px;
+      margin: 0 0 30px;
+    }
+    p { 
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0;
+      line-height: 28px;
+    }
+  }
+}

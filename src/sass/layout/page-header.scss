@@ -1,0 +1,97 @@
+.page-header {
+  padding: 20px 0;
+  background-color: #ffffff;
+  @include media('<=tablet-lg') {
+    padding: 10px 0;
+  }
+  &.container {
+    @include flex-centering(space-between);
+    @include media('<=tablet-lg') {
+      padding: 0 20px;
+    }
+  }
+  &__logo {
+    img {
+      max-width: 188px;
+    }
+  }
+  &__turkey {
+    @extend .flex;
+    @extend .ai-cetner;
+    font-size: 14px;
+    img {
+      max-width: 56px;
+      margin-right: 10px;
+    }
+  }
+
+  &__top-menu {
+    ul {
+      @extend %listreset;
+      @extend .flex-row;
+      list-style: none;
+      li {
+        margin: 0 15px;
+        display: flex;
+        a {
+          color: map-deep-get($colors, 'base', 'black-light');
+          display: flex;
+          align-items: center;
+          &:before {
+            content: '';
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+          }
+          &.top-menu__call {
+            &:before {
+              background-image: url('../images/telephone.svg');
+              width: 26px;
+              height: 24px;
+            }
+          }
+          &.top-menu__about {
+            &:before {
+              background-image: url('../images/men.svg');
+              width: 25px;
+              height: 20px;
+            }
+          }
+          &.top-menu__deal {
+            &:before {
+              background-image: url('../images/diler.svg');
+              width: 25px;
+              height: 16px;
+            }
+          }
+        }
+      }
+    }
+    
+  }
+  &__controls {
+    &__lang {
+      margin-right: 30px;
+      display: flex;
+      @extend %ai-center;
+      a {
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 23px;
+        color: map-deep-get($colors, 'base', 'black-light');
+        &.active {
+          color: map-deep-get($colors, 'base', 'link-hover');
+        }
+        &:first-child {
+          margin-right: 20px;
+        }
+      }
+    }
+    &__search {
+      margin: 0 15px;
+    }
+    &__cart {
+      margin-left: 30px;
+    }
+  }
+}

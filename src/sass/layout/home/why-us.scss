@@ -1,0 +1,54 @@
+.why-us {
+  margin: 70px 0;
+  .left-block {
+    width: 50%;
+    ol {
+      counter-reset: item;
+      @extend %listreset;
+      column-count: 2;
+      margin-top: 40px;
+      li {
+        margin: 0 0 40px;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 26px;
+        font-family: map-get($fonts, 'medium');
+        padding: 6px 0;
+        b {
+          display: block;
+        }
+        &:before {
+          content: counter(item) "";
+          counter-increment: item;
+          font-size: 60px;
+          line-height: 50px;
+          font-family: map-get($fonts, 'bold');
+          font-weight: bold;
+          letter-spacing: 0;
+          color: #1E7960;
+          float: left;
+          margin: 0 10px 0 0;
+          padding: 0 5px;
+        }
+      }
+    }
+    .cta-tip {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      .tip {
+        color: #E5002B;
+        margin-right: 20px;
+        b {
+          display: block;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .right-block {
+    width: 50%;
+  }
+}

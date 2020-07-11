@@ -1,0 +1,30 @@
+.sales {
+  margin: 50px 0;
+  background: #FCE2E7;
+  .sales-info {
+    width: 50%;
+    align-self: center;
+    h2 {
+      font-size: 42px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 24px;
+      margin: 0 0 30px;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 30px;
+      margin: 0;
+    }
+    .btn {
+      margin-top: 30px;
+      width: 160px;
+    }
+  }
+  .sales-hero {
+    width: 50%;
+    padding-left: 40px;
+  }
+}

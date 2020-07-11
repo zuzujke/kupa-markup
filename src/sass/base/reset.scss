@@ -1,0 +1,45 @@
+// This is base reset for global components.
+//
+// Note: If you use a framework that includes base styling then you need to remove this file.
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+*::selection {
+  background: map-deep-get($colors, 'base', 'selection');
+  color: inherit;
+}
+
+body {
+  @include font-smoothing(on);
+  background: map-deep-get($colors, 'base', 'white');
+  color: map-deep-get($colors, 'base', 'black');
+  font-family: map-get($fonts, 'default');
+  min-width: map-get($breakpoints, 'phone-sm');
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+// adaptive images
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

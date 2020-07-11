@@ -1,0 +1,14 @@
+.under-nav {
+  background-color: #F2EFEC;
+  padding: 15px;
+  .container {
+    justify-content: space-between;
+  }
+  @extend .flex-row;
+  .flex {
+    @extend %ai-center;
+    img {
+      margin-right: 15px;
+    }
+  }
+}

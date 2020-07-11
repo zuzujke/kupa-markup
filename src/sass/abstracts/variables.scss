@@ -1,0 +1,110 @@
+// Global variables
+//
+// Base font styles for headings and links.
+
+$animation-time: .3s;
+$preloader-antimation-time: 1.8s;
+
+$grid: (
+  'container':
+    (
+      'desktop-lg': 1920px,
+      'desktop-md': 1450px,
+      'desktop': 1199px,
+      'tablet': 970px,
+      'tablet-sm': 615px,
+      'phone': 100%
+    ),
+  'columns-number': ('desktop': 12, 'tablet': 12, 'mobile': 4)
+);
+
+$font-size: (
+  'h1-font-size': 42px,
+  'h2-font-size': 38px,
+  'h3-font-size': 30px,
+  'h4-font-size': 24px,
+  'h5-font-size': 20px,
+  'h6-font-size': 16px,
+  'base': 14px,
+  'massive': 16px
+);
+
+$line-height: (
+  'h1-line-height': 42px,
+  'h2-line-height': 1.4,
+  'h3-line-height': 1.4,
+  'h4-line-height': 1.4,
+  'h5-line-height': 1.4,
+  'h6-line-height': 1.4,
+  'base': 1.24em
+);
+
+$fonts: (
+  'default': unquote("'Futura PT'"),
+  'medium': unquote("'Futura PT Medium'"),
+  'bold': unquote("'Futura PT Bold"),
+  'base-sans-serif': unquote("Arial, 'Helvetica Neue', Helvetica, sans-serif"),
+  'base-serif': unquote("'Times New Roman', Times, Baskerville, Georgia, serif"),
+);
+
+$colors: (
+  'base':
+    (
+      'white': #fff,
+      'black': #000,
+      'black-light': #333,
+      'link-hover': #1E7960,
+      'grey': rgba(242,239,236,0.51),
+      'lighten-black': #1b2541,
+      'link-color': #39f,
+      'selection': #b4d5ff
+    ),
+  'theme':
+    (
+      'primary': #006A69,
+      'secondary': #004948,
+      'green': #1E7960,
+      'light-grey': #f5f7fc,
+      'grey': #7f7f7f,
+      'error': #ff3c3c,
+      'placeholder': #999,
+      'logo-bg': #7577cd
+    )
+);
+
+// Vars for forms
+$forms: (
+  'form-font-family': unquote("Arial, 'Helvetica Neue', Helvetica, sans-serif"),
+  'form-element-padding': unquote("0.4em 0.7em"),
+  'form-element-border-color': #999,
+  'form-element-focus-border-color': #000,
+  'placeholder-color': #999
+);
+
+// Base media breakpoints
+$breakpoints: (
+  'desktop-lg': 2560px,
+  'desktop-md': 1440px,
+  'desktop-sm': 1200px,
+  'tablet-lg' : 1024px,
+  'tablet-md' : 980px,
+  'tablet-sm' : 768px,
+  'phone-xl' : 640px,
+  'phone-lg' : 480px,
+  'phone-md' : 375px,
+  'phone-sm' : 320px
+);
+
+// Keywords for include media mixin
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// z-indexes, using: z-index: z('SEMANTIC_VALUE');
+$z-indexes: ('preloader', 'modal', 'hight', 'content', 'low');

@@ -1,0 +1,21 @@
+.section-title {
+  display: block;
+  font-family: map-get($fonts, 'medium');
+  font-size: 42px;
+  line-height: 54px;
+  letter-spacing: 0;
+  color: map-deep-get($colors, 'base', 'light-black');
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  padding-top: 30px;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 99px;
+    height: 4px;
+    background-color: #E5002B;
+  }
+}

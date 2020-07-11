@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const fileinclude = require('gulp-file-include');
 const rigger = require('gulp-rigger');
 const htmlmin = require('gulp-htmlmin');
 const cachebust = require('gulp-cache-bust');
@@ -16,6 +17,10 @@ const cachebustConfig = {
 const html = () => {
   return gulp
     .src(paths.src.html)
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe(rigger())
     .pipe(mode.production(htmlmin(htmlminConfig)))
     .pipe(mode.production(cachebust(cachebustConfig)))
