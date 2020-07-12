@@ -7,12 +7,16 @@
   &.container {
     @include flex-centering(space-between);
     @include media('<=tablet-lg') {
-      padding: 0 20px;
+      padding: 10px 15px;
+      flex-wrap: wrap;
     }
   }
   &__logo {
     img {
       max-width: 188px;
+      @include media('<=tablet-lg') {
+        max-width: 94px;
+      }
     }
   }
   &__turkey {
@@ -23,9 +27,15 @@
       max-width: 56px;
       margin-right: 10px;
     }
+    @include media('<=tablet-lg') {
+      display: none;
+    }
   }
 
   &__top-menu {
+    @include media('<=tablet-lg') {
+      display: none;
+    }
     ul {
       @extend %listreset;
       @extend .flex-row;
@@ -74,6 +84,9 @@
       margin-right: 30px;
       display: flex;
       @extend %ai-center;
+      @include media('<=tablet-lg') {
+        display: none;
+      }
       a {
         font-size: 18px;
         letter-spacing: 0;
@@ -89,9 +102,15 @@
     }
     &__search {
       margin: 0 15px;
+      @include media('<=tablet-lg') {
+        margin: 0 10px;
+      }
     }
     &__cart {
       margin-left: 30px;
+      @include media('<=tablet-lg') {
+        margin: 0 10px;
+      }
     }
   }
 }

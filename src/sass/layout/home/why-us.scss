@@ -1,12 +1,23 @@
 .why-us {
   margin: 70px 0;
+  .flex {
+    @include media('<=tablet-lg') {
+      flex-direction: column;
+    }
+  }
   .left-block {
     width: 50%;
+    @include media('<=tablet-lg') {
+      width: 100%;
+    }
     ol {
       counter-reset: item;
       @extend %listreset;
       column-count: 2;
       margin-top: 40px;
+      @include media('<=tablet-lg') {
+        column-count: 1;
+      }
       li {
         margin: 0 0 40px;
         font-size: 20px;
@@ -37,9 +48,26 @@
       display: flex;
       justify-content: space-between;
       font-size: 18px;
+      @include media('<=tablet-lg') {
+        flex-direction: column;
+        padding: 0 15px;
+      }
+      .btn {
+        @include media('<=tablet-lg') {
+          max-width: 200px;
+          margin: 0 auto;
+          order: 2;
+        }
+      }
       .tip {
         color: #E5002B;
         margin-right: 20px;
+        @include media('<=tablet-lg') {
+          max-width: 100%;
+          padding: 0 15px;
+          margin: 20px auto;
+          order: 1;
+        }
         b {
           display: block;
           text-transform: uppercase;
@@ -50,5 +78,8 @@
   }
   .right-block {
     width: 50%;
+    @include media('<=tablet-lg') {
+      width: 100%;
+    }
   }
 }

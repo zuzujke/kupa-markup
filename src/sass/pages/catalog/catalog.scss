@@ -1,0 +1,63 @@
+@import 'c-filter';
+
+.catalog-title {
+  text-align: center;
+  color: #393939;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 38px;
+  text-transform: uppercase;
+  margin: 41px 0 29px;
+}
+
+.catalog-sort {
+  margin: 5px 0 18px;
+  justify-content: start;
+  span {
+    display: block;
+    margin-right: 15px;
+  }
+  a {
+    margin: 0 15px;
+    color: map-deep-get($colors, 'base', 'black-light');
+    &:after {
+      content: '|';
+      margin-left: 30px;
+    }
+    &:last-child:after {
+      content: '';
+    }
+  }
+}
+
+@import 'c-grid';
+@import 'c-reviews.scss';
+
+.category-description {
+  border-top: 1px solid #D6D6D6;
+  padding: 40px 0;
+  margin: 50px 0 0;
+  h1 {
+    text-align: center;
+  }
+  details {
+    position: relative;
+    padding-bottom: 50px;
+    summary {
+      position: absolute;
+      right: 0;
+      border-bottom: 1px dotted;
+      outline-style: none;
+      cursor: pointer;
+      &:after {
+        content: 'Читать далее';
+      }
+      &::-webkit-details-marker{
+        display: none;
+      }
+    }
+    &[open] summary:after{content:"Скрыть"}
+    &[open] summary{position:absolute;bottom:30px;right:0}
+  }
+}

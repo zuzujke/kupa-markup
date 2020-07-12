@@ -1,8 +1,14 @@
 .under-nav {
   background-color: #F2EFEC;
   padding: 15px;
+  @include media('<=tablet-lg') {
+    display: none;
+  }
   .container {
     justify-content: space-between;
+    @include media('<=tablet-lg') {
+      flex-wrap: wrap;
+    }
   }
   @extend .flex-row;
   .flex {

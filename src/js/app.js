@@ -1,5 +1,4 @@
 var $ = require('jquery');
-import 'slick-carousel';
 
 // You can write a call and import your functions in this file.
 //
@@ -9,8 +8,12 @@ import 'slick-carousel';
 // import {NAME} from './modules/...';
 import hamburger from './modules/hamburger';
 import slider from './modules/slick';
+import accordeon from './modules/filterToggle';
+import range from './modules/price-range';
 
 // $('.turkey').append('hello');
 
 hamburger.handler();
 slider.sliderInit();
+accordeon.handler();
+range.enable();

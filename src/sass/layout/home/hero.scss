@@ -2,11 +2,17 @@
   background: map-deep-get($colors, 'base', 'grey');
   .container {
     display: flex;
-
+    @include media('<tablet-lg') {
+      flex-direction: column;
+    }
   }
   &__slider {
     width: 70%;
     max-width: 849px;
+    @include media('<tablet-lg') {
+      width: 100%;
+      max-width: 100%;
+    }
   }
   &__showcase {
     width: 30%;
@@ -15,12 +21,28 @@
     justify-content: center;
     text-align: right;
     padding-left: 40px;
+    @include media('<tablet-lg') {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 20px;
+    }
     h1 {
       margin-top: 0;
+      @include media('<tablet-lg') {
+        display: none;
+      }
+    }
+    p {
+      @include media('<tablet-lg') {
+        display: none;
+      }
     }
     &--buttons {
       display: flex;
       justify-content: flex-end;
+      @include media('<tablet-lg') {
+        justify-content: center;
+      }
       .btn {
         margin-left: 15px;
       }

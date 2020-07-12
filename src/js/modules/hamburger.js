@@ -4,7 +4,7 @@ const hamburger = {
   handler() {
     const $body = $('body');
     const $btn = $('.hamburger');
-    const $menu = $('.menu');
+    const $menu = $('.navigation');
     const $submenu = $('.submenu');
     const $submenuLink = $('.menu__link--submenu');
     const $submenuClose = $('.submenu__item--static');

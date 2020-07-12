@@ -1,18 +1,20 @@
 .hamburger {
-  width: 24px;
-  height: 18px;
+  width: 34px;
+  height: 28px;
   @include mobileVisible('tablet-lg');
   position: relative;
   z-index: z('hight');
   cursor: pointer;
+  align-self: center;
+  margin: 0 0 0 15px;
   &.opened {
     background: #fff;
   }
   &__item {
     display: block;
-    height: 2px;
+    height: 3px;
     width: 100%;
-    background: map-deep-get($colors, 'theme', 'primary');
+    background: map-deep-get($colors, 'base', 'black-light');
     border-radius: 8px;
     transition: all $animation-time ease-in-out;
     position: absolute;
@@ -27,12 +29,12 @@
 
     &:nth-child(2),
     &:nth-child(3) {
-      top: 8px;
+      top: 11px;
       .opened & { width: 0; }
     }
 
     &:nth-child(4) {
-      top: 15px;
+      top: 21px;
       .opened & {
         transform: rotate(-45deg);
         top: 10px;

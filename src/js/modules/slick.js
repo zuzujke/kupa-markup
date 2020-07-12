@@ -3,7 +3,7 @@ import 'slick-carousel';
 
 const slider = {
   sliderInit() {
-    function heroSlider() {
+    function popularSlider() {
       const $parent = $('.popular-carousel');
       $parent.slick({
         dots: true,
@@ -17,39 +17,27 @@ const slider = {
         },
         nextArrow: '<span class="arrow-right"></span>',
         prevArrow: '<span class="arrow-left"></span>',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+            }
+          }
+        ]
       });
     }
-    function testimonialsSlider() {
-      const $parent = $('.testimonials-slider');
+    function reviewsSlider() {
+      const $parent = $('.reviews-carousel');
       if ($parent.length) {
-        let currentSlide;
-        let slidesCount;
-        const sliderCounter = document.createElement('div');
-        sliderCounter.classList.add('slider__counter');
-        const updateSliderCounter = (slick) => {
-          currentSlide = slick.slickCurrentSlide() + 1;
-          slidesCount = slick.slideCount;
-          $(sliderCounter).text(`${currentSlide} of ${slidesCount}`);
-        };
-        $parent.on('init', (event, slick) => {
-          $('.slider-counter-wrap').append(sliderCounter);
-          updateSliderCounter(slick);
-        });
-        $parent.on('afterChange', (event, slick) => {
-          updateSliderCounter(slick, currentSlide);
-        });
         $parent.slick({
           dots: false,
-          arrows: false,
+          arrows: true,
           infinite: true,
           autoplay: false,
-          items: 1,
-        });
-        $('.testimonials-prev').click(() => {
-          $parent.slick('slickPrev');
-        });
-        $('.testimonials-next').click(() => {
-          $parent.slick('slickNext');
+          slidesToShow: 4,
+          nextArrow: '<span class="arrow-right"></span>',
+          prevArrow: '<span class="arrow-left"></span>',
         });
       }
     }
@@ -88,8 +76,8 @@ const slider = {
       }
     }
     function init() {
-      heroSlider();
-      testimonialsSlider();
+      popularSlider();
+      reviewsSlider();
       successSlider();
     }
     return {

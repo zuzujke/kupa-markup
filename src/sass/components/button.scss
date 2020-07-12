@@ -15,6 +15,7 @@
   white-space: nowrap;
   transition: .25s;
   letter-spacing: .5px;
+  cursor: pointer;
   &:hover {
     background: map-deep-get($colors, 'theme', 'secondary');
     background-image: url('../images/arrow-white.svg');
@@ -47,5 +48,31 @@
     background-position: 90% 52%;
     border: 1px solid #fff;
     cursor: pointer;
+  }
+  &-buy {
+    display: block;
+    height: 49px;
+    line-height: 46px;
+    width: 231px;
+    border: 1px solid map-deep-get($colors, 'base', 'red');
+    color: map-deep-get($colors, 'base', 'red');
+    background-image:none;
+    padding: 0 16px;
+    font-size: 18px;
+    font-weight: map-get($fonts, 'medium');
+    text-transform: uppercase;
+    letter-spacing: 0;
+    &:hover {
+      background-color:  map-deep-get($colors, 'base', 'red');
+      color: #fff;
+    }
+  }
+  &-load-more {
+    @extend .btn;
+    font-size: 18px;
+    height: 54px;
+    width: 226px;
+    text-indent: 15px;
+    background-color: #006A69;
   }
 }
