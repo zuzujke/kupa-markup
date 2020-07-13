@@ -66,6 +66,54 @@
       background-color:  map-deep-get($colors, 'base', 'red');
       color: #fff;
     }
+    &-invert {
+      display: block;
+      height: 49px;
+      line-height: 46px;
+      width: 231px;
+      padding: 0 16px;
+      font-size: 18px;
+      text-align: center;
+      text-transform: uppercase;
+      border: 1px solid map-deep-get($colors, 'base', 'red');
+      background: map-deep-get($colors, 'base', 'red');
+      color: #FFF;
+      &:hover {
+        background-color: #fff;
+        color: map-deep-get($colors, 'base', 'red');
+      }
+    }
+  }
+  &-linked {
+    color: #1E7960;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 23px;
+    text-decoration: underline;
+    font-family: map-get($fonts, 'medium');
+  }
+  &-compare {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 12px;
+    text-align: left;
+    &:before {
+      content: '';
+      display: inline-block;
+      background-image: url('../images/libra.svg');
+      width: 24px;
+      height: 23px;
+      margin-right: 10px;
+    }
+    span {
+      flex: 1;
+    }
   }
   &-load-more {
     @extend .btn;

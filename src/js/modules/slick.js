@@ -41,6 +41,39 @@ const slider = {
         });
       }
     }
+    function cardShowcaseSlider() {
+      if ($('.card-showcase-big').length && $('.card-showcase-small').length) {
+        $('.card-showcase-big').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          fade: true,
+          asNavFor: '.card-showcase-small'
+        });
+        $('.card-showcase-small').slick({
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          asNavFor: '.card-showcase-big',
+          dots: false,
+          arrows: false,
+          focusOnSelect: true
+        });
+      }
+    }
+    function similarProducts() {
+      const $parent = $('.similar-carousel');
+      if ($parent.length) {
+        $parent.slick({
+          dots: false,
+          arrows: true,
+          infinite: true,
+          autoplay: false,
+          slidesToShow: 4,
+          nextArrow: '<span class="arrow-right"></span>',
+          prevArrow: '<span class="arrow-left"></span>',
+        });
+      }
+    }
     function successSlider() {
       const $parent = $('.success-slider');
       if ($parent.length) {
@@ -79,6 +112,8 @@ const slider = {
       popularSlider();
       reviewsSlider();
       successSlider();
+      cardShowcaseSlider();
+      similarProducts();
     }
     return {
       init: init(),

@@ -16347,15 +16347,15 @@ var _filterToggle = _interopRequireDefault(require("./modules/filterToggle"));
 
 var _priceRange = _interopRequireDefault(require("./modules/price-range"));
 
+var _select = _interopRequireDefault(require("./modules/select"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var $ = require('jquery'); // You can write a call and import your functions in this file.
+// You can write a call and import your functions in this file.
 //
 // This file will be compiled into app.js and will not be minified.
 // Feel free with using ES6 here.
 // import {NAME} from './modules/...';
-
-
 // $('.turkey').append('hello');
 _hamburger.default.handler();
 
@@ -16365,7 +16365,9 @@ _filterToggle.default.handler();
 
 _priceRange.default.enable();
 
-},{"./modules/filterToggle":5,"./modules/hamburger":6,"./modules/price-range":7,"./modules/slick":8,"jquery":2}],5:[function(require,module,exports){
+_select.default.customStyle();
+
+},{"./modules/filterToggle":5,"./modules/hamburger":6,"./modules/price-range":7,"./modules/select":8,"./modules/slick":9}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -16494,6 +16496,63 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var $ = require('jquery');
+
+var select = {
+  customStyle: function customStyle() {
+    if ($('select').length) {
+      $('select').each(function () {
+        var $this = $(this),
+            numberOfOptions = $(this).children('option').length;
+        $this.addClass('select-hidden');
+        $this.wrap('<div class="select"></div>');
+        $this.after('<div class="select-styled"></div>');
+        var $styledSelect = $this.next('div.select-styled');
+        $styledSelect.text($this.children('option').eq(0).text());
+        var $list = $('<ul />', {
+          'class': 'select-options'
+        }).insertAfter($styledSelect);
+
+        for (var i = 0; i < numberOfOptions; i++) {
+          $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+          }).appendTo($list);
+        }
+
+        var $listItems = $list.children('li');
+        $styledSelect.click(function (e) {
+          e.stopPropagation();
+          $('div.select-styled.active').not(this).each(function () {
+            $(this).removeClass('active').next('ul.select-options').hide();
+          });
+          $(this).toggleClass('active').next('ul.select-options').toggle();
+        });
+        $listItems.click(function (e) {
+          e.stopPropagation();
+          $styledSelect.text($(this).text()).removeClass('active');
+          $this.val($(this).attr('rel'));
+          $list.hide(); //console.log($this.val());
+        });
+        $(document).click(function () {
+          $styledSelect.removeClass('active');
+          $list.hide();
+        });
+      });
+    }
+  }
+};
+var _default = select;
+exports.default = _default;
+
+},{"jquery":2}],9:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 require("slick-carousel");
 
 var $ = require('jquery');
@@ -16525,6 +16584,42 @@ var slider = {
 
     function reviewsSlider() {
       var $parent = $('.reviews-carousel');
+
+      if ($parent.length) {
+        $parent.slick({
+          dots: false,
+          arrows: true,
+          infinite: true,
+          autoplay: false,
+          slidesToShow: 4,
+          nextArrow: '<span class="arrow-right"></span>',
+          prevArrow: '<span class="arrow-left"></span>'
+        });
+      }
+    }
+
+    function cardShowcaseSlider() {
+      if ($('.card-showcase-big').length && $('.card-showcase-small').length) {
+        $('.card-showcase-big').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          fade: true,
+          asNavFor: '.card-showcase-small'
+        });
+        $('.card-showcase-small').slick({
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          asNavFor: '.card-showcase-big',
+          dots: false,
+          arrows: false,
+          focusOnSelect: true
+        });
+      }
+    }
+
+    function similarProducts() {
+      var $parent = $('.similar-carousel');
 
       if ($parent.length) {
         $parent.slick({
@@ -16581,6 +16676,8 @@ var slider = {
       popularSlider();
       reviewsSlider();
       successSlider();
+      cardShowcaseSlider();
+      similarProducts();
     }
 
     return {

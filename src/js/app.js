@@ -1,5 +1,3 @@
-var $ = require('jquery');
-
 // You can write a call and import your functions in this file.
 //
 // This file will be compiled into app.js and will not be minified.
@@ -10,6 +8,7 @@ import hamburger from './modules/hamburger';
 import slider from './modules/slick';
 import accordeon from './modules/filterToggle';
 import range from './modules/price-range';
+import select from './modules/select';
 
 // $('.turkey').append('hello');
 
@@ -17,3 +16,4 @@ hamburger.handler();
 slider.sliderInit();
 accordeon.handler();
 range.enable();
+select.customStyle();
