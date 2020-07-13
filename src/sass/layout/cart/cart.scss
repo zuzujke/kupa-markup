@@ -1,0 +1,14 @@
+.cart-flex {
+  display: flex;
+  justify-content: space-between;
+  .cart-order,
+  .cart-form {
+    width: 50%;
+    &.mr {
+      margin-right: 22.5px;
+    }
+    &.ml {
+      margin-left: 22.5px;
+    }
+  }
+}

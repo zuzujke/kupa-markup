@@ -1,0 +1,298 @@
+.card-flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 38px auto 66px;
+}
+
+.card-showcase {
+  width: 50%;
+  margin-right: 22.5px;
+  &-big {
+    img {
+      height: 586px;
+    }
+  }
+  &-small {
+    .slick-list {
+      margin: 31px -13px 0;
+      .slick-slide {
+        margin: 0 13px;
+        img {
+          height: 109px;
+        }
+      }
+    }
+  }
+}
+
+.card-info {
+  width: 50%;
+  margin-left: 22.5px;
+  &__box {
+    display: grid;
+    grid-template-columns: 55% 1fr;
+    grid-column-gap: 5px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+    padding: 29px 34px;
+    &__title {
+      color: #393939;
+      font-family: "Futura PT";
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 30px;
+      order: 1;
+      &__article {
+        color: #B4B4B4;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 14px;
+        margin: 15px 0 20px;
+      }
+    }
+    &__stock {
+      order: 2;
+      text-align: right;
+      .--in-stock {
+        color: #1E7960;
+        font-family: map-get($fonts, 'medium');
+        font-size: 16px;
+        font-weight: 500;
+        position: relative;
+        &:before {
+          content: '';
+          display: inline-block;
+          margin: 0 15px 0 0;
+          width: 13px;
+          height: 22px;
+          border: solid #1E7960;
+          border-width: 0 3px 3px 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+    &__price {
+      display: flex;
+      flex-direction: column;
+      order: 3;
+      padding-top: 30px;
+      &-old {
+        color: #E5002B;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 36px;
+        text-decoration: line-through;
+      }
+      &-actual {
+        color: #393939;
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 36px;
+      }
+    }
+    &__rating {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      order: 5;
+      margin: 44px 0 0;
+    }
+    
+    &__reviews {
+      font-size: 18px;
+      letter-spacing: 0;
+      line-height: 22px;
+      padding-left: 10px;
+      color: #393939;
+      border-left: 1px solid #393939;
+      order: 5;
+    }
+    &__buy {
+      margin: 10px 0;
+      order: 4;
+      .btn-buy {
+        margin: 0 0 17px;
+        text-align: center;
+        width: 205px;
+        &-invert {
+          width: 205px;
+          font-size: 18px;
+          text-align: center;
+          margin: 0 0 20px;
+        }
+      }
+    }
+    &__buy-options {
+      order: 7;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      margin: 32px 0 0;
+      display: flex;
+      .delivery-box,
+      .payment-box {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 26px;
+        font-family: map-get($fonts, 'medium');
+        img {
+          margin-right: 14px;
+        }
+      }
+    }
+  }
+  &__description {
+    margin: 44px 0 0;
+    .tt {
+      text-transform: uppercase;
+      font-size: 20px;
+      font-family: map-get($fonts, 'medium');
+      margin: 0;
+    }
+    p {
+      line-height: 21px;
+    }
+  }
+}
+
+.card-details {
+  background: #FBFBFB;
+  padding: 30px 0 36px;
+  .container {
+    justify-content: space-between;
+  }
+  &__chars {
+    width: 50%;
+    margin-right: 22.5px;
+    background: #fff;
+    padding: 32px 30px 39px;
+    .t-lead {
+      color: #393939;
+      font-size: 24px;
+      font-family: map-get($fonts, 'medium');
+      letter-spacing: 0;
+      line-height: 31px;
+      margin: 0 0 30px;
+    }
+    .chars-grid {
+      display: flex;
+      .left-col,
+      .right-col {
+        width: 50%;
+        div {
+          height: 40px;
+          line-height: 40px;
+          padding: 0 14px;
+          &:nth-child(odd) {
+            background: #F9F9F9;
+          }
+        }
+      }
+    }
+  }
+  &__reviews {
+    width: 50%;
+    margin-left: 22.5px;
+    background: #fff;
+    padding: 32px 30px 0;
+    &-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 0 30px;
+      .t-lead {
+        color: #393939;
+        font-size: 24px;
+        font-family: map-get($fonts, 'medium');
+        letter-spacing: 0;
+        line-height: 31px;
+      }
+    }
+    &-put {
+      display: flex;
+      justify-content: flex-end;
+      justify-items: center;
+      img {
+        margin-right: 10px;
+      }
+      span {
+        font-size: 18px;
+        font-family: map-get($fonts, 'medium');
+        letter-spacing: 0;
+        line-height: 23px;
+        color: #1E7960;
+      }
+    }
+    &-item {
+      margin: 0 0 30px;
+      &__author {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-size: 18px;
+        margin: 0 0 10px;
+        .comment-date {
+          margin: 0 10px;
+        }
+      }
+      
+    }
+  }
+}
+
+.similar-products {
+  margin: 20px 0;
+  .slick-list {
+    margin: 0 -14px;
+    .slick-slide {
+      margin: 0 14px;
+      outline: none;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .catalog-grid__item {
+    position: relative;
+    .catalog-grid__item-overlay {
+      border: solid transparent;
+    }
+    &:hover {
+      overflow: visible;
+      height: 542px;
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+      .catalog-grid__item-overlay {
+        z-index: 0;
+        border: solid transparent;
+      }
+    }
+  }
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background-color: #1E7960;
+    z-index: 1;
+    &.arrow-left {
+      display: block;
+      background-image: url('../images/arrow-black.svg');
+      background-size: 100%;
+      transform: rotate(-180deg);
+      left: -16px;
+    }
+    &.arrow-right {
+      display: block;
+      background-image: url('../images/arrow-black.svg');
+      background-size: 100%;
+      right: -16px;
+    }
+    &.slick-disabled {
+      opacity: 0.5;
+    }
+  }
+}

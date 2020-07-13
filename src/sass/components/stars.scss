@@ -1,0 +1,16 @@
+.stars {
+  display: flex;
+  justify-content: center;
+  height: 18px;
+  margin-right: 10px;
+  .star {
+    width: 16px;
+    height: 16px;
+    &-filled {
+      background-image: url('../images/icons_star_active.svg');
+    }
+    &-empty {
+      background-image: url('../images/icons_star_inactive.svg');
+    }
+  }
+}

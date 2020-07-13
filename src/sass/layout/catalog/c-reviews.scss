@@ -1,0 +1,116 @@
+.reviews {
+  margin: 20px 0 50px;
+  &:before {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  h2 {
+    text-align: center;
+  }
+  .slick-list {
+    margin: 0 -31px;
+    .slick-slide {
+      margin: 0 31px;
+      outline: none;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &-carousel {
+    z-index: 1;
+    margin-top: -50px;
+    padding-top: 84px;
+    &__item {
+      position: relative;
+      z-index: 1;
+      img {
+        width: 270px;
+        height: 270px;
+        margin: 0 auto;
+      }
+      &-title {
+        display: block;
+        color: map-deep-get($colors, 'base', 'black-light');
+        font-family: "Futura PT";
+        font-size: 20px;
+        letter-spacing: 0;
+        line-height: 26px;
+        margin: 12px 0;
+        text-transform: uppercase;
+      }
+      .stars {
+        display: flex;
+        justify-content: flex-start;
+        height: 18px;
+        margin-right: 10px;
+        .star {
+          width: 16px;
+          height: 16px;
+          &-filled {
+            background-image: url('../images/icons_star_active.svg');
+          }
+          &-empty {
+            background-image: url('../images/icons_star_inactive.svg');
+          }
+        }
+      }
+      &-description {
+        margin: 10px 0;
+        color: #3D3D3D;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 20px;
+        padding-right: 29px;
+      }
+      &-author,
+      &-date {
+        color: #A5A5A5;
+      }
+    }
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      background-color: #1E7960;
+      z-index: 1;
+      &.arrow-left {
+        display: block;
+        background-image: url('../images/arrow-black.svg');
+        background-size: 100%;
+        transform: rotate(-180deg);
+        left: -16px;
+      }
+      &.arrow-right {
+        display: block;
+        background-image: url('../images/arrow-black.svg');
+        background-size: 100%;
+        right: -16px;
+      }
+      &.slick-disabled {
+        opacity: 0.5;
+      }
+    }
+    .slick-dots {
+      @extend %listreset;
+      position: absolute;
+      top: 0;
+      right: 147px;
+      font-size: 20px;
+      li {
+        display: none;
+      }
+      .slick-active {
+        display: block;
+        .current {
+          color: grey;
+        }
+      }
+    }
+  }
+}
