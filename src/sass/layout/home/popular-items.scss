@@ -8,9 +8,12 @@
       z-index: -1;
       top: 0;
       left: -139px;
-      height: 470px;
+      height: 373px;
       width: 500px;
       background-color: #F2EFEC;
+      @include media('<tablet-lg') {
+        display: none;
+      }
     }
   }
   .slick-list {
@@ -62,6 +65,7 @@
       right: 0;
       width: 40px;
       height: 20px;
+      transform: translateY(75%);
       @include media('<=tablet-lg') {
         top: auto;
         bottom: -48px;
@@ -69,8 +73,9 @@
       &.arrow-left {
         display: block;
         background-image: url('../images/arrow-black.svg');
-        background-size: 100%;
-        transform: rotate(-180deg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        transform: rotate(-180deg) translateY(-75%);
         right: 77px;
         @include media('<=tablet-lg') {
           right: auto;
@@ -80,7 +85,8 @@
       &.arrow-right {
         display: block;
         background-image: url('../images/arrow-black.svg');
-        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
         @include media('<=tablet-lg') {
           right: auto;
           right: 55px;

@@ -1,0 +1,132 @@
+.projects-wrapper {
+  @include media('<=tablet-lg') {
+    margin: 50px 0 0;
+  }
+  .grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    margin: 43px 0 30px;
+    @include media('<=tablet-lg') {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+  }
+  .project-item {
+    margin: 43px 0;
+    @include media('<=tablet-lg') {
+      margin: 0 0 1em;
+    }
+    &__layer {
+      position: relative;
+      &:before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: .5s all ease-in;
+      }
+      .btn-details {
+        border: 1px solid #fff;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 189px;
+        opacity: 0;
+        transition: .5s all ease-in;
+        @extend .btn-white;
+      }
+      img {
+        width: 380px;
+        height: 368px;
+        @include media('<=tablet-lg') {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    &:hover {
+      .project-item__layer {
+        &:before {
+          background: rgba(0,0,0,0.29);
+        }
+        .btn-details {
+          opacity: 1;
+        }
+      }
+    }
+    &__body {
+      padding: 18px 20px 24px;
+      background: #F2EFEC;
+      color: #393939;
+    }
+    &__title {
+      color: #333333;
+      font-family: map-get($fonts, 'medium');
+      font-size: 24px;
+      line-height: 31px;
+    }
+    &__location {
+      margin: 10px 0;
+      &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 18px;
+        height: 24px;
+        margin-right: 5px;
+        background-image: url('../images/pin-p.svg');
+      }
+    }
+    &__details {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10px;
+      .square {
+        display: flex;
+        align-items: center;
+        &:before {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 29px;
+          height: 24px;
+          margin-right: 5px;
+          background-image: url('../images/3d-p.svg');
+        }
+      }
+      .term {
+        margin: 0 15px;
+        display: flex;
+        align-items: center;
+        &:before {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 24px;
+          height: 24px;
+          margin-right: 5px;
+          background-image: url('../images/clock-p.svg');
+        }
+      }
+      .worth {
+        display: flex;
+        align-items: center;
+        &:before {
+          content: '';
+          display: inline-block;
+          vertical-align: middle;
+          width: 24px;
+          height: 24px;
+          margin-right: 5px;
+          background-image: url('../images/discount-p.svg');
+        }
+      }
+    }
+  }
+}

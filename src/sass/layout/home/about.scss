@@ -5,12 +5,19 @@
   &-image {
     width: 50%;
     padding-right: 64px;
+    @include media('<=tablet-lg') {
+      display: none;
+    }
     img {
       height: 435px;
     }
   }
   &-info {
     width: 50%;
+    @include media('<=tablet-lg') {
+      width: 100%;
+      padding: 0 15px;
+    }
     h2 {
       font-size: 42px;
       font-weight: 500;

@@ -27,10 +27,24 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  &.overlay {
+    overflow: hidden;
+  }
 }
 
 main {
   flex: 1;
+}
+
+b {
+  font-family: 'Futura PT Bold';
+}
+
+hr.grey {
+  border-top: 1px solid #D8D8D8;
+  &.mb {
+    margin: 20px 0 50px;
+  }
 }
 
 a {

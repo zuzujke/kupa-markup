@@ -56,52 +56,6 @@
   justify-content: flex-end;
 }
 
-// // // // //
-// Visibility 
-// // // // //
-
-.hidden-desktop,
-%hidden-desktop {
-  @include media('>tablet-lg') {
-    display: none !important;
-  }
-}
-
-.visible-desktop,
-%visible-desktop {
-  @include media('>tablet-lg') {
-    display: block !important;
-  }
-}
-
-.hidden-tablet,
-%hidden-tablet {
-  @include media('>=tablet-sm', '<desktop-sm') {
-    display: none !important;
-  }
-}
-
-.visible-tablet,
-%visible-tablet {
-  @include media('>=tablet-sm', '<desktop-sm') {
-    display: block !important;
-  }
-}
-
-.hidden-mobile,
-%hidden-mobile {
-  @include media('>=phone-sm', '<tablet-sm') {
-    display: none !important;
-  }
-}
-
-.visible-mobile,
-%visible-mobile {
-  @include media('>=phone-sm', '<tablet-sm') {
-    display: block !important;
-  }
-}
-
 // // // //
 // Resets
 // // // //
@@ -115,15 +69,4 @@
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-/// * Helper class to truncate and add ellipsis to a string too long for it to fit
-/// * on a single line.
-/// * 1. Prevent content from wrapping, forcing it on a single line.
-/// * 2. Add ellipsis at the end of the line.
-
-.ellipsis {
-  white-space: nowrap; // 1
-  text-overflow: ellipsis; // 2 
-  overflow: hidden;
 }

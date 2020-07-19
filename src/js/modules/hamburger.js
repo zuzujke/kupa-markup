@@ -6,8 +6,7 @@ const hamburger = {
     const $btn = $('.hamburger');
     const $menu = $('.navigation');
     const $submenu = $('.submenu');
-    const $submenuLink = $('.menu__link--submenu');
-    const $submenuClose = $('.submenu__item--static');
+    const $hasSubmenu = $('.menu__wrap.has-submenu .menu__item');
     const OPENED_CLASS = 'opened';
     const OVERLAY_CLASS = 'overlay';
     // alert('works');
@@ -20,19 +19,23 @@ const hamburger = {
       });
     }
     function submenuToggle() {
-      $submenuLink.on('click', (event) => {
-        event.preventDefault();
-        $submenu.toggleClass(OPENED_CLASS);
+      $hasSubmenu.each(function(index) {
+        $(this).on("click", function(e){
+          e.preventDefault();
+          console.log('element: ',$(this).attr('class'));
+          console.log('siblings: ',$(this).next().attr('class'));
+          $(this).toggleClass(OPENED_CLASS).next().toggleClass(OPENED_CLASS);
+        });
       });
-      $submenuClose.on('click', (event) => {
-        event.preventDefault();
-        $submenu.toggleClass(OPENED_CLASS);
-      });
+      // $submenuClose.on('click', (event) => {
+      //   event.preventDefault();
+      //   $submenu.removeClass(OPENED_CLASS);
+      // });
     }
     function init() {
       if (!$btn.length) return;
       hamburgerToggle();
-      if (!$submenu.length) return;
+      // if (!$hasSubmenu.length) return;
       submenuToggle();
     }
     return {

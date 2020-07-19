@@ -1,0 +1,65 @@
+.banner {
+  position: relative;
+  margin: 20px 0 80px;
+  @include media('<tablet-lg') {
+    display: block;
+  }
+  &__slider {
+    @include media('<tablet-lg') {
+      width: 100%;
+      max-width: 100%;
+      img {
+        min-height: 245px;
+        object-fit: cover;
+      }
+    }
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include media('<tablet-lg') {
+      padding: 0 15px;
+    }
+    &-wrapper {
+      max-width: 640px;
+      h1 {
+        margin: 0 0 10px;
+        color: #333333;
+        font-family: map-get($fonts, 'medium');
+        font-size: 42px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 52px;
+        @include media('<=tablet-lg') {
+          font-size: 20px;
+          line-height: 26px;
+        }
+        span {
+          color: #E5002B;
+        }
+      }
+      p {
+        font-size: 20px;
+        letter-spacing: 0;
+        line-height: 32px;
+        margin: 0 0 27px;
+        @include media('<=tablet-lg') {
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+      .flex {
+        justify-content: start;
+        @include media('<=tablet-lg') {
+          position: absolute;
+          bottom: -105px;
+        }
+        .btn-invert {
+          margin: 0 20px 0 0;
+        }
+      }
+    }
+  }
+}

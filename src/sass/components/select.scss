@@ -1,8 +1,7 @@
 $background: #fff;
 $select-color: #1E7960;
 $select-background: #fff;
-$select-width: 220px;
-$select-height: 40px; 
+$select-height: 45px; 
 
 .select-hidden {
   display: none;
@@ -15,7 +14,6 @@ $select-height: 40px;
   position: relative;
   font-size: 16px;
   color: $select-color;
-  width: $select-width;
   height: $select-height;
 }
 .select-styled {
@@ -26,11 +24,14 @@ $select-height: 40px;
   left: 0;
   height: 45px;
   width: 100%;
-  color: #333;
+  color: #C9BBBB;
   background-color: #fff;
   border: 1px solid #D8D8D8;
   padding: 13.5px 17.5px;
   transition: all .15s ease-in;
+  &.selected {
+    color: #000;
+  }
   &:after {
     content:"";
     width: 0;

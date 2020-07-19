@@ -1,0 +1,85 @@
+.design-item {
+  border: 1px solid #1E7960;
+  text-align: center;
+  padding: 30px 20px 95px;
+  color: #333333;
+  position: relative;
+  @include media('<=tablet-lg') {
+    margin: 1em;
+  }
+  &__title {
+    font-family: map-get($fonts, 'medium');
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 38px;
+    margin: 0 0 10px;
+  }
+  &__description {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 18px;
+  }
+  &__price {
+    font-size: 50px;
+    font-family: map-get($fonts, 'medium');
+    letter-spacing: 0;
+    line-height: 64px;
+    color: #1E7960;
+    margin: 30px 0 37px;
+  }
+  ul {
+    @extend %listreset;
+    li {
+      font-size: 18px;
+      font-family: map-get($fonts, 'medium');
+      letter-spacing: 0;
+      line-height: 23px;
+      margin: 0 0 15px;
+    }
+  }
+  .btn {
+    width: 224px;
+    text-indent: 20px;
+    margin: 40px auto 0;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+  }
+}
+
+.design-reviews {
+  margin: 45px 0;
+  &__item {
+    padding: 0 46px;
+    @include media('<=tablet-lg') {
+      padding: 0 15px;
+    }
+    div {
+      margin: 0 0 6px;
+    }
+  }
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    @extend %listreset;
+    li {
+      margin: 15px 7.5px;
+      &.slick-active {
+        button {
+          background: #E5002B;
+        }
+      }
+      button {
+        width: 13px;
+        height: 13px;
+        border-radius: 100%;
+        background: #D8D8D8;
+        border: none;
+        color: transparent;
+        outline: none;
+      }
+    }
+  }
+}

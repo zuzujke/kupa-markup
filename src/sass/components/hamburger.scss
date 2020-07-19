@@ -16,7 +16,7 @@
     width: 100%;
     background: map-deep-get($colors, 'base', 'black-light');
     border-radius: 8px;
-    transition: all $animation-time ease-in-out;
+    transition: all .5 ease-in-out;
     position: absolute;
 
     &:nth-child(1) {

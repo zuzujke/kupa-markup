@@ -29,9 +29,9 @@ const select = {
         $styledSelect.click(function(e) {
             e.stopPropagation();
             $('div.select-styled.active').not(this).each(function(){
-                $(this).removeClass('active').next('ul.select-options').hide();
+                $(this).removeClass('active').addClass('selected').next('ul.select-options').hide();
             });
-            $(this).toggleClass('active').next('ul.select-options').toggle();
+            $(this).toggleClass('active').addClass('selected').next('ul.select-options').toggle();
         });
   
         $listItems.click(function(e) {

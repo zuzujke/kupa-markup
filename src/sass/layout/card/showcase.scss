@@ -2,23 +2,64 @@
   display: flex;
   justify-content: space-between;
   margin: 38px auto 66px;
+  @include media('<=tablet-lg') {
+    flex-direction: column;
+    position: relative;
+  }
 }
 
 .card-showcase {
   width: 50%;
   margin-right: 22.5px;
+  @include media('<=tablet-lg') {
+    width: 100%;
+    padding: 0 15px;
+    margin-top: 100px;
+  }
   &-big {
     img {
       height: 586px;
+      @include media('<=tablet-lg') {
+        height: auto;
+      }
+    }
+
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      @extend %listreset;
+      li {
+        margin: 15px 7.5px;
+        &.slick-active {
+          button {
+            background: #E5002B;
+          }
+        }
+        button {
+          width: 13px;
+          height: 13px;
+          border-radius: 100%;
+          background: #D8D8D8;
+          border: none;
+          color: transparent;
+          outline: none;
+        }
+      }
     }
   }
   &-small {
+    @include media('<=tablet-lg') {
+      display: none;
+    }
     .slick-list {
       margin: 31px -13px 0;
       .slick-slide {
         margin: 0 13px;
         img {
           height: 109px;
+          @include media('<=tablet-lg') {
+            height: auto;
+          }
         }
       }
     }
@@ -28,12 +69,24 @@
 .card-info {
   width: 50%;
   margin-left: 22.5px;
+  @include media('<=tablet-lg') {
+    width: 100%;
+    padding: 0 15px;
+    margin: 20px 0;
+  }
   &__box {
     display: grid;
     grid-template-columns: 55% 1fr;
     grid-column-gap: 5px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
     padding: 29px 34px;
+    @include media('<=tablet-lg') {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: none;
+      padding: 0;
+    }
     &__title {
       color: #393939;
       font-family: "Futura PT";
@@ -42,12 +95,21 @@
       letter-spacing: 0;
       line-height: 30px;
       order: 1;
+      @include media('<=tablet-lg') {
+        position: absolute;
+        top: 0;
+        height: 60px;
+        align-self: start;
+      }
       &__article {
         color: #B4B4B4;
         font-size: 14px;
         letter-spacing: 0;
         line-height: 14px;
         margin: 15px 0 20px;
+        @include media('<=tablet-lg') {
+          display: none;
+        }
       }
     }
     &__stock {
@@ -68,7 +130,17 @@
           border: solid #1E7960;
           border-width: 0 3px 3px 0;
           transform: rotate(45deg);
+          @include media('<=tablet-lg') {
+            margin: 0 15px 0 10px;
+          }
         }
+      }
+      @include media('<=tablet-lg') {
+        position: absolute;
+        top: 60px;
+        height: 20px;
+        text-align: left;
+        align-self: start;
       }
     }
     &__price {
@@ -76,6 +148,9 @@
       flex-direction: column;
       order: 3;
       padding-top: 30px;
+      @include media('<=tablet-lg') {
+        padding-top: 0;
+      }
       &-old {
         color: #E5002B;
         font-size: 20px;
@@ -83,10 +158,15 @@
         letter-spacing: 0;
         line-height: 36px;
         text-decoration: line-through;
+        font-family: map-get($fonts, 'medium');
+        @include media('<=tablet-lg') {
+          text-align: center;
+        }
       }
       &-actual {
         color: #393939;
         font-size: 36px;
+        font-family: map-get($fonts, 'bold');
         font-weight: bold;
         letter-spacing: 0;
         line-height: 36px;
@@ -112,6 +192,7 @@
     &__buy {
       margin: 10px 0;
       order: 4;
+      text-align: center;
       .btn-buy {
         margin: 0 0 17px;
         text-align: center;
@@ -130,6 +211,10 @@
       grid-column-end: 3;
       margin: 32px 0 0;
       display: flex;
+      @include media('<=tablet-lg') {
+        flex-direction: column;
+        align-items: center;
+      }
       .delivery-box,
       .payment-box {
         width: 50%;
@@ -138,14 +223,28 @@
         align-items: center;
         padding-right: 26px;
         font-family: map-get($fonts, 'medium');
+        @include media('<=tablet-lg') {
+          flex-direction: column;
+          width: 100%;
+          max-width: 182px;
+          padding: 0 15px;
+          margin: 0 0 15px;
+          text-align: center;
+        }
         img {
           margin-right: 14px;
+          @include media('<=tablet-lg') {
+            margin: 0 0 14px;
+          }
         }
       }
     }
   }
   &__description {
     margin: 44px 0 0;
+    @include media('<=tablet-lg') {
+      display: none;
+    }
     .tt {
       text-transform: uppercase;
       font-size: 20px;
@@ -158,9 +257,55 @@
   }
 }
 
+.mobile_tabs {
+  display: none;
+  @include media('<=tablet-lg') {
+    display: block;
+  }
+  .tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #D6D6D6;
+    .tab {
+      font-size: 16px;
+      font-family: map-get($fonts, 'medium');
+      letter-spacing: 0;
+      line-height: 21px;
+      text-align: center;
+      padding: 0 15px 7px;
+      position: relative;
+      &:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        height: 4px;
+        background: transparent;
+      }
+      &.active {
+        &:after {
+          background: #1E7960;
+        }
+      }
+    }
+  }
+  .tab_item {
+    display: none;
+    padding: 15px;
+    &:first-child {
+      display: block;
+    }
+  }
+} 
+
+
 .card-details {
   background: #FBFBFB;
   padding: 30px 0 36px;
+  @include media('<=tablet-lg') {
+    display: none;
+  }
   .container {
     justify-content: space-between;
   }
@@ -169,6 +314,10 @@
     margin-right: 22.5px;
     background: #fff;
     padding: 32px 30px 39px;
+    @include media('<=tablet-lg') {
+      width: 100%;
+      padding: 0;
+    }
     .t-lead {
       color: #393939;
       font-size: 24px;
@@ -176,9 +325,15 @@
       letter-spacing: 0;
       line-height: 31px;
       margin: 0 0 30px;
+      @include media('<=tablet-lg') {
+        padding: 30px;
+      }
     }
     .chars-grid {
       display: flex;
+      @include media('<=tablet-lg') {
+        margin: -15px;
+      }
       .left-col,
       .right-col {
         width: 50%;
@@ -186,6 +341,9 @@
           height: 40px;
           line-height: 40px;
           padding: 0 14px;
+          @include media('<=tablet-lg') {
+            white-space: pre;
+          }
           &:nth-child(odd) {
             background: #F9F9F9;
           }
@@ -198,6 +356,11 @@
     margin-left: 22.5px;
     background: #fff;
     padding: 32px 30px 0;
+    @include media('<=tablet-lg') {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
     &-head {
       display: flex;
       justify-content: space-between;
@@ -245,8 +408,20 @@
 
 .similar-products {
   margin: 20px 0;
+  .title {
+    color: #3D3D3D;
+    font-family: map-get($fonts, 'medium');
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 46px;
+    text-align: center;
+  }
   .slick-list {
     margin: 0 -14px;
+    @include media('<tablet-lg') {
+      margin: 0;
+    }
     .slick-slide {
       margin: 0 14px;
       outline: none;
@@ -278,18 +453,29 @@
     height: 32px;
     background-color: #1E7960;
     z-index: 1;
+    @include media('<=tablet-lg') {
+      transform: translateY(0%);
+    }
     &.arrow-left {
       display: block;
-      background-image: url('../images/arrow-black.svg');
-      background-size: 100%;
+      background-image: url('../images/chevron.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
       transform: rotate(-180deg);
       left: -16px;
+      @include media('<=tablet-lg') {
+        left: 10px;
+      }
     }
     &.arrow-right {
       display: block;
-      background-image: url('../images/arrow-black.svg');
-      background-size: 100%;
+      background-image: url('../images/chevron.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
       right: -16px;
+      @include media('<=tablet-lg') {
+        right: 10px;
+      }
     }
     &.slick-disabled {
       opacity: 0.5;

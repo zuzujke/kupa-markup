@@ -4,34 +4,101 @@
       <div class="t-lead">Ваш заказ</div>
       <a href="#">Продолжить покупки</a>
     </div>
-    <div class="cart-order__item">
-      <img src="./images/category1.png" alt="">
-      <span>Двухъярусная кровать CITY </span>
-      <div class="cart-order__spinner">
-        <a href="#" class="cart-order__spinner-btn j-increment"></a>
-        <span class="cart-order__spinner-value j-value">1</span>
-        <a href="#" class="cart-order__spinner-btn j-decrement"></a>
+    <div class="cart-order__body">
+      <div class="cart-order__item">
+        <img class="cart-order__thumb" src="./images/category1.png" alt="">
+        <span class="cart-order__title">Двухъярусная кровать CITY </span>
+        <div class="cart-order__spinner">
+          <a href="#" class="cart-order__spinner-btn j-increment">-</a>
+          <span class="cart-order__spinner-value j-value">1</span>
+          <a href="#" class="cart-order__spinner-btn j-decrement">+</a>
+        </div>
+        <div class="cart-order__cost">
+          3,666 грн.
+        </div>
+        <a href="#" class="cart-order__remove">
+  
+        </a>
       </div>
-      <div class="cart-order__cost">
-        3,666 грн.
+      <div class="cart-order__item">
+        <img class="cart-order__thumb" src="./images/category1.png" alt="">
+        <span class="cart-order__title">Двухъярусная кровать CITY </span>
+        <div class="cart-order__spinner">
+          <a href="#" class="cart-order__spinner-btn j-increment">-</a>
+          <span class="cart-order__spinner-value j-value">1</span>
+          <a href="#" class="cart-order__spinner-btn j-decrement">+</a>
+        </div>
+        <div class="cart-order__cost">
+          3,666 грн.
+        </div>
+        <a href="#" class="cart-order__remove">
+  
+        </a>
       </div>
-      <a href="#" class="cart-order__remove">
-
-      </a>
+      <div class="cart-order__item">
+        <img class="cart-order__thumb" src="./images/category1.png" alt="">
+        <span class="cart-order__title">Двухъярусная кровать CITY </span>
+        <div class="cart-order__spinner">
+          <a href="#" class="cart-order__spinner-btn j-increment">-</a>
+          <span class="cart-order__spinner-value j-value">1</span>
+          <a href="#" class="cart-order__spinner-btn j-decrement">+</a>
+        </div>
+        <div class="cart-order__cost">
+          3,666 грн.
+        </div>
+        <a href="#" class="cart-order__remove">
+  
+        </a>
+      </div>
+      <div class="cart-order__item">
+        <img class="cart-order__thumb" src="./images/category1.png" alt="">
+        <span class="cart-order__title">Постельное белье 
+          в детскую New Green  </span>
+        <div class="cart-order__spinner">
+          <a href="#" class="cart-order__spinner-btn j-increment">-</a>
+          <span class="cart-order__spinner-value j-value">15</span>
+          <a href="#" class="cart-order__spinner-btn j-decrement">+</a>
+        </div>
+        <div class="cart-order__cost">
+          54,990 грн.
+        </div>
+        <a href="#" class="cart-order__remove">
+  
+        </a>
+      </div>
+      <div class="cart-order__item">
+        <img class="cart-order__thumb" src="./images/category1.png" alt="">
+        <span class="cart-order__title">Двухъярусная кровать CITY Двухъярусная кровать CITY</span>
+        <div class="cart-order__spinner">
+          <a href="#" class="cart-order__spinner-btn j-increment">-</a>
+          <span class="cart-order__spinner-value j-value">1</span>
+          <a href="#" class="cart-order__spinner-btn j-decrement">+</a>
+        </div>
+        <div class="cart-order__cost">
+          3,666 грн.
+        </div>
+        <a href="#" class="cart-order__remove">
+  
+        </a>
+      </div>
+    </div>
+    <div class="cart-order__footer">
+      <span class="t-lead">Всего:</span>
+      <span class="cart-order__total" id="total-cost">399,002 грн.</span>
     </div>
   </div>
   <div class="cart-form ml"> 
     <div class="cart-form__header">
       <div class="t-lead">Ваши данные</div>
     </div>
-    <form action="#">
+    <form class="cart-order__body" action="#">
       <div class="field-group">
         <label for="">Ваше имя</label>
-        <input type="text" name="" id="">
+        <input type="text" name="" id="" placeholder="Введите имя">
       </div>
       <div class="field-group">
         <label for="">Номер телефона*</label>
-        <input type="text" name="" id="">
+        <input type="tel" name="" id="" placeholder="+380 ( _ _ _ ) _ _  _ _  _ _">
       </div>
       <div class="field-group">
         <label for="">Способ доставки</label>
@@ -51,13 +118,16 @@
           <option value="apple-pay">Apple Pay</option>
       </select> 
       </div>
-      <div class="field-group flex">
+      <div class="field-group checkout-flex">
         <div class="checkout-tip">
           <img src="./images/medal.svg" alt="">
           <span>Наш менеджер свяжется с 
             Вами в течение 30 минут</span>
         </div>
-        <button type="submit">Отправить</button>
+        <button type="submit" class="btn-submit btn-buy open-modal">Отправить</button>
+
+        @@include('./modals/success-modal.html')
+
       </div>
     </form>
   </div>

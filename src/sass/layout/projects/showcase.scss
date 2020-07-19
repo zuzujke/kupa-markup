@@ -1,0 +1,83 @@
+.design-showcase {
+  width: 65%;
+  margin-right: 10px;
+  @include media('<=tablet-lg') {
+    width: 100%;
+    padding: 0 15px;
+    margin-top: 100px;
+  }
+  &-big {
+    img {
+      height: 586px;
+      @include media('<=tablet-lg') {
+        height: auto;
+      }
+    }
+  }
+  &-small {
+    @include media('<=tablet-lg') {
+      display: none;
+    }
+    .slick-list {
+      margin: 31px -13px 0;
+      .slick-slide {
+        margin: 0 13px;
+        img {
+          height: 109px;
+          @include media('<=tablet-lg') {
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.design-info {
+  width: 35%;
+  margin-left: 10px;
+  @include media('<=tablet-lg') {
+    width: 100%;
+    padding: 0 15px;
+    margin: 20px 0;
+  }
+  .tt {
+    color: #333333;
+    font-family: map-get($fonts, 'bold');
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 31px;
+    @include media('<=tablet-lg') {
+      position: absolute;
+      top: 0;
+      height: 60px;
+      align-self: start;
+    }
+  }
+  &__description {
+    color: #333333;
+    font-family: map-get($fonts, 'base');
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+  &__controls {
+    .free-tip {
+      margin: 0 0 28px;
+      color: #E5002B;
+      font-family: map-get($fonts, 'medium');
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 30px;
+    }
+    .btn {
+      max-width: 388px;
+      margin: 0 0 26px;
+    }
+    .btn-invert {
+      max-width: 251px;
+    }
+  }
+}

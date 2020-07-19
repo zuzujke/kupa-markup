@@ -1,0 +1,36 @@
+.grid5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 20px;
+  margin: 45px 0 90px;
+  @include media('<=tablet-lg') {
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+  }
+  .feature {
+    padding: 30px 20px;
+    height: 300px;
+    font-family: map-get($fonts, 'medium');
+    @include media('<=tablet-lg') {
+      width: 100%;
+    }
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 95px;
+      border-radius: 100%;
+      margin: 0 auto 22px;
+      background: rgba(30, 121, 96, 0.08);
+    }
+    &-description {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 24px;
+    }
+  }
+}

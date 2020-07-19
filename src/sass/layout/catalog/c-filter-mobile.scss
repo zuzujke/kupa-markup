@@ -1,0 +1,121 @@
+@include media('>tablet-lg') {
+  .catalog-controls--mobile {
+    display: none;
+  }
+}
+
+@include media('<=tablet-lg') {
+  aside.sidebar-filter {
+    display: none;
+  }
+  .catalog-controls--mobile {
+    display: flex;
+    align-items: center;
+    padding: 17px 0;
+    background: #F2EFEC;
+    margin: 0 0 30px;
+    .catalog-contols__filter {
+      width: 50%;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 0;
+      line-height: 26px;
+      text-align: center;
+      color: #393939;
+    }
+    .rect {
+      height: 37px;
+      width: 1px;
+      background-color: #D8D8D8;
+    }
+    .filter_absolute {
+      display: none;
+      background: #F2EFEC;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 3;
+      &.opened {
+        display: block;
+      }
+      &-head {
+        height: 60px;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 26px;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .close_control {
+
+      }
+      &-body {
+        .sidebar-filter__item {
+          margin-top: 0;
+          border: 1px solid #F5F5F5;
+          &-head {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0;
+            line-height: 21px;
+            background-color: #F2EFEC;
+          }
+          
+        }
+      }
+    }
+  }
+  .catalog-sort {
+    display: none;
+    background: #F2EFEC;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    margin: 0!important;
+    b {
+      font-family: map-get($fonts, 'default');
+      font-weight: normal;
+    }
+    &.opened {
+      display: flex;
+      flex-direction: column;
+    }
+    &__label {
+      height: 60px;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 26px;
+      padding: 15px;
+      margin-right: 0!important;
+      display: flex!important;
+      align-items: center;
+      justify-content: space-between;
+      &:after {
+        content: 'x';
+        float: right;
+      }
+    }
+    &__item {
+      margin: 0!important;
+      padding: 20px 15px;
+      transition: all .15s ease-in;
+      color: #333;
+      background-color: #F2EFEC;
+      border: 1px solid #F5F5F5;
+      &:after {
+        display: none;
+      }
+      &[rel="hide"] {
+        display: none;
+      }
+    }
+  }
+}

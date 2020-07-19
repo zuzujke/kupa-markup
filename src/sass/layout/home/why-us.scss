@@ -3,6 +3,7 @@
   .flex {
     @include media('<=tablet-lg') {
       flex-direction: column;
+      padding: 0 15px;
     }
   }
   .left-block {
@@ -47,10 +48,11 @@
     .cta-tip {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       font-size: 18px;
       @include media('<=tablet-lg') {
         flex-direction: column;
-        padding: 0 15px;
+
       }
       .btn {
         @include media('<=tablet-lg') {
@@ -61,7 +63,9 @@
       }
       .tip {
         color: #E5002B;
+        font-family: map-get($fonts, 'medium');
         margin-right: 20px;
+        
         @include media('<=tablet-lg') {
           max-width: 100%;
           padding: 0 15px;
@@ -71,7 +75,7 @@
         b {
           display: block;
           text-transform: uppercase;
-          font-weight: bold;
+          font-family: map-get($fonts, 'bold');
         }
       }
     }
@@ -80,6 +84,7 @@
     width: 50%;
     @include media('<=tablet-lg') {
       width: 100%;
+      display: none;
     }
   }
 }

@@ -7,14 +7,33 @@
     clear: both;
     visibility: hidden;
   }
+  hr {
+    margin: 0 0 40px;
+  }
   h2 {
     text-align: center;
+    font-family: map-get($fonts, 'medium');
+    font-weight: 500;
+    @include media('<=tablet-lg') {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 31px;
+      text-align: center;
+      margin-top: 30px;
+    }
   }
   .slick-list {
     margin: 0 -31px;
+    @include media('<=tablet-lg') {
+      margin: 0;
+    }
     .slick-slide {
       margin: 0 31px;
       outline: none;
+      @include media('<=tablet-lg') {
+        margin: 0;
+      }
       &:focus {
         outline: none;
       }
@@ -27,10 +46,17 @@
     &__item {
       position: relative;
       z-index: 1;
+      @include media('<=tablet-lg') {
+        padding: 0 30px;
+      }
       img {
         width: 270px;
         height: 270px;
         margin: 0 auto;
+        @include media('<=tablet-lg') {
+          width: auto;
+          height: auto;
+        }
       }
       &-title {
         display: block;
@@ -61,13 +87,21 @@
       &-description {
         margin: 10px 0;
         color: #3D3D3D;
+        font-family: map-get($fonts, 'montserrat');
         font-size: 14px;
         letter-spacing: 0;
         line-height: 20px;
         padding-right: 29px;
+        @include media('<=tablet-lg') {
+          font-size: 14px;
+          letter-spacing: 0;
+          line-height: 20px;
+          padding: 0;
+        }
       }
       &-author,
       &-date {
+        font-family: map-get($fonts, 'montserrat');
         color: #A5A5A5;
       }
     }
@@ -79,18 +113,29 @@
       height: 32px;
       background-color: #1E7960;
       z-index: 1;
+      @include media('<=tablet-lg') {
+        transform: translateY(0%);
+      }
       &.arrow-left {
         display: block;
-        background-image: url('../images/arrow-black.svg');
-        background-size: 100%;
+        background-image: url('../images/chevron.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
         transform: rotate(-180deg);
         left: -16px;
+        @include media('<=tablet-lg') {
+          left: 10px;
+        }
       }
       &.arrow-right {
         display: block;
-        background-image: url('../images/arrow-black.svg');
-        background-size: 100%;
+        background-image: url('../images/chevron.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
         right: -16px;
+        @include media('<=tablet-lg') {
+          right: 10px;
+        }
       }
       &.slick-disabled {
         opacity: 0.5;
