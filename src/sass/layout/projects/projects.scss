@@ -1,12 +1,50 @@
 .projects-wrapper {
   @include media('<=tablet-lg') {
     margin: 50px 0 0;
+    padding: 0 15px;
+  }
+  .container {
+    padding: 0;
+  }
+  .title {
+    display: block;
+    color: #3D3D3D;
+    font-family: map-get($fonts, 'medium');
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 46px;
+    text-align: center;
+    margin: 0 auto 30px;
+    padding: 80px 0 30px;
+    @include media('<=tablet-lg') {
+      padding: 0;
+      margin: -30px 0 30px;
+    }
+    &.title-center {
+      padding: 0;
+    }
+  }
+  .section-title {
+    @include media('<=tablet-lg') {
+      padding: 0;
+      &:after {
+        left: 0;
+      }
+    }
+  }
+  .projects-title {
+    margin: 50px 0 48px;
+    @include media('<=tablet-lg') {
+      margin: 27px 0 20px;
+      padding: 0;
+    }
   }
   .grid3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 30px;
-    margin: 43px 0 30px;
+    margin: 40px 0 30px;
     @include media('<=tablet-lg') {
       display: flex;
       flex-direction: column;
@@ -14,9 +52,8 @@
     }
   }
   .project-item {
-    margin: 43px 0;
     @include media('<=tablet-lg') {
-      margin: 0 0 1em;
+      margin: 1em 0;
     }
     &__layer {
       position: relative;
@@ -126,6 +163,30 @@
           margin-right: 5px;
           background-image: url('../images/discount-p.svg');
         }
+      }
+    }
+  }
+  .btn-load-more {
+    margin: 0 auto 90px;
+  }
+
+  + .why-us {
+    .container {
+      padding: 0;
+    }
+    @include media('<=tablet-lg') {
+      .section-title {
+        font-size: 42px;
+        font-family: map-get($fonts, 'medium');
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 54px;
+      }
+      .left-block ol li {
+        margin: 0 0 32px;
+      }
+      .cta-tip {
+        display: none;
       }
     }
   }

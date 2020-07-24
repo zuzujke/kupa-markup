@@ -4,6 +4,9 @@
   @include media('<=tablet-lg') {
     padding: 10px 0;
   }
+  @include media('<desktop-sm', '>tablet-lg') {
+    padding: 15px!important;
+  }
   &.container {
     @include flex-centering(space-between);
     @include media('<=tablet-lg') {
@@ -35,7 +38,7 @@
     @extend .ai-cetner;
     font-size: 14px;
     img {
-      max-width: 56px;
+      max-width: 88px;
       margin-right: 10px;
     }
     @include media('<=tablet-lg') {

@@ -6,6 +6,7 @@
   }
   .container {
     justify-content: space-between;
+    padding: 0;
     @include media('<=tablet-lg') {
       flex-wrap: wrap;
     }
@@ -13,6 +14,7 @@
   @extend .flex-row;
   .flex {
     @extend %ai-center;
+    font-size: 18px;
     img {
       margin-right: 15px;
     }

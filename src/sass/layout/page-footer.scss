@@ -9,8 +9,10 @@ footer {
   .container {
     display: flex;
     justify-content: space-between;
+    padding: 0;
     @include media('<=tablet-lg') {
       flex-direction: column;
+      padding: 0 15px;
     }
     .subscribe-panel__label {
       color: #ffffff;
@@ -28,7 +30,8 @@ footer {
       }
     }
     .subscribe-panel__form {
-      width: 800px;
+      width: calc( 597px + 135px + 20px );
+      margin-right: 72px;
       display: flex;
       justify-content: flex-end;
       @include media('<=tablet-lg') {
@@ -41,6 +44,8 @@ footer {
         height: 44px;
         margin-right: 15px;
         padding: 13px 18px;
+        -webkit-appearance: none;
+        border: 1px solid #d8d8d8;
         @include placeholder {
           color: #C9BBBB;
         }
@@ -66,7 +71,11 @@ footer {
     flex-direction: column;
     padding: 30px 15px;
   }
+  @include media('<desktop-sm', '>tablet-lg') {
+    padding: 30px 15px!important
+  }
   &__logo {
+    margin-right: 40px;
     img {
       max-width: 175px;
       @include media('<=tablet-lg') {
@@ -128,6 +137,9 @@ footer {
           width: 183px;
         }
       }
+    }
+    &:last-child {
+      margin-right: 72px;
     }
   }
 }

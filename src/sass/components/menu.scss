@@ -15,6 +15,15 @@ nav.navigation {
     background: #F8F6F5;
     transition: transform .25s;
     background-color: #F2EFEC;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      // border: 5px solid rgba(255, 255, 255, 0);
+      // background-clip: padding-box;
+      background: #D8D8D8;
+      border-radius: 10px;
+    }
     &.opened {
       display: flex;
       transform: translate(0, 0);
@@ -30,10 +39,32 @@ nav.navigation {
     @include media('<=tablet-lg') {
       flex-direction: column;
       justify-content: flex-start;
+      margin: 0 0 150px;
     }
     .menu__wrap {
       height: 100%;
       line-height: 59px;
+      &.lang {
+        display: none;
+        align-self: end;
+        padding: 0;
+        a {
+          padding: 0 15px 15px;
+          font-family: map-get($fonts, 'default');
+          display: flex;
+          padding: 15px 14px;
+          cursor: pointer;
+          height: auto;
+          line-height: normal;
+          color: #333;
+          &.active {
+            color: #1E7960;
+          }
+        }
+        @include media('<=tablet-lg') {
+          display: flex!important;
+        }
+      }
       @include media('<=tablet-lg') {
         height: auto;
         line-height: inherit;

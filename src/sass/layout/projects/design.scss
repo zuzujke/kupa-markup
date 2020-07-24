@@ -5,7 +5,7 @@
   color: #333333;
   position: relative;
   @include media('<=tablet-lg') {
-    margin: 1em;
+    margin: 1em 0;
   }
   &__title {
     font-family: map-get($fonts, 'medium');
@@ -27,6 +27,10 @@
     line-height: 64px;
     color: #1E7960;
     margin: 30px 0 37px;
+    white-space: nowrap;
+    @include media('<=tablet-lg') {
+      size: 36px;
+    } 
   }
   ul {
     @extend %listreset;
@@ -56,8 +60,23 @@
     @include media('<=tablet-lg') {
       padding: 0 15px;
     }
+    p {
+      color: #333333;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0;
+      line-height: 21px;
+    }
     div {
       margin: 0 0 6px;
+      b {
+        color: #333333;
+        font-family: map-get($fonts, 'medium');
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 21px;
+      }
     }
   }
   .slick-dots {

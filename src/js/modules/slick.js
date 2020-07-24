@@ -19,7 +19,7 @@ const slider = {
           },
           responsive: [
             {
-              breakpoint: 1024,
+              breakpoint: 1025,
               settings: {
                 slidesToShow: 1,
                 dots: false,
@@ -46,7 +46,7 @@ const slider = {
         prevArrow: '<span class="arrow-left abs"></span>',
         responsive: [
           {
-            breakpoint: 1024,
+            breakpoint: 1025,
             settings: {
               slidesToShow: 1,
               customPaging: function(slick,index) {
@@ -71,7 +71,7 @@ const slider = {
           prevArrow: '<span class="arrow-left default"></span>',
           responsive: [
             {
-              breakpoint: 1024,
+              breakpoint: 1025,
               settings: {
                 slidesToShow: 1,
               }
@@ -90,7 +90,7 @@ const slider = {
           asNavFor: '.card-showcase-small',
           responsive: [
             {
-              breakpoint: 1024,
+              breakpoint: 1025,
               settings: {
                 dots: true,
                 fade: false,
@@ -118,7 +118,7 @@ const slider = {
           asNavFor: '.design-showcase-small',
           responsive: [
             {
-              breakpoint: 1024,
+              breakpoint: 1025,
               settings: {
                 dots: true,
                 fade: false,
@@ -149,7 +149,7 @@ const slider = {
           prevArrow: '<span class="arrow-left default"></span>',
           responsive: [
             {
-              breakpoint: 1024,
+              breakpoint: 1025,
               settings: {
                 slidesToShow: 1,
               }
@@ -171,7 +171,7 @@ const slider = {
           prevArrow: '<span class="arrow-left default"></span>',
           responsive: [
             {
-              breakpoint: 1024,
+              breakpoint: 1025,
               settings: {
                 dots: true,
                 slidesToShow: 1,
@@ -185,16 +185,38 @@ const slider = {
     }
     function projects() {
       const $parent = $('.grid3.projects-list');
-      if ($parent.length && window.matchMedia("(max-width: 1024px)").matches) {
+      if ($parent.length && window.matchMedia("(max-width: 1025px)").matches) {
         $parent.slick({
           responsive: [
             {
-              breakpoint: 1024,
+              breakpoint: 1025,
               settings: {
                 dots: true,
                 arrows: false,
                 slidesToShow: 1,
                 fade: false,
+              }
+            }
+          ]
+        });
+      }
+    }
+    function relatedProducts() {
+      const $parent = $('.related-items');
+      if ($parent.length) {
+        $parent.slick({
+          dots: false,
+          arrows: true,
+          infinite: true,
+          autoplay: false,
+          slidesToShow: 4,
+          nextArrow: '<span class="arrow-right default"></span>',
+          prevArrow: '<span class="arrow-left default"></span>',
+          responsive: [
+            {
+              breakpoint: 1025,
+              settings: {
+                slidesToShow: 1,
               }
             }
           ]
@@ -210,6 +232,7 @@ const slider = {
       designReviews();
       designShowcaseSlider();
       projects();
+      relatedProducts();
     }
     return {
       init: init(),

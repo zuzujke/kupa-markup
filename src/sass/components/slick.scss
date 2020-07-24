@@ -17,18 +17,21 @@
       border: none;
       color: transparent;
       outline: none;
+      -webkit-appearance: none;
+      padding: 0;
+      text-indent: -999em;
     }
   }
 }
 
 .slick-arrow {
+  cursor: pointer;
   @include media('<=tablet-lg') {
     transform: translateY(0%);
   }
   &.arrow-left.default {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     width: 32px;
     height: 32px;
     background-color: #1E7960;
@@ -37,7 +40,7 @@
     background-image: url('../images/chevron.svg');
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    transform: rotate(-180deg);
+    transform: rotate(-180deg) translateY(50%);
     left: -16px;
     @include media('<=tablet-lg') {
       left: 10px;
@@ -63,4 +66,9 @@
   &.slick-disabled {
     opacity: 0.5;
   }
+}
+
+.slick-slide,
+.slick-slide a {
+  outline: none
 }

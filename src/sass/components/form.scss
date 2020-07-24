@@ -1,8 +1,12 @@
 .form-free {
-  background-image: url('../images/hero-design.png');
-  background-size: 100%;
+  background-image: url('../images/bg-form.png');
+  background-position: 50% 50%;
+  background-size: cover;
   height: 778px;
-  margin: 65px 0 100px;
+  margin: 65px 0 20px;
+  @include media('<=tablet-lg') {
+    text-align: center;
+  }
   .container {
     position: relative;
   }
@@ -23,20 +27,30 @@
       margin: 0 0 30px;
       font-family: map-get($fonts, 'medium');
       font-weight: 500;
+      + p {
+        font-family: map-get($fonts, 'medium');
+      }
     }
-    input {
+    input[type="text"],
+    input[type="tel"] {
+      font-family: map-get($fonts, 'medium');
       background: transparent;
       border: none;
       border-bottom: 2px solid #D8D8D8;
-      margin: 0 25px;
+      margin: 0 20px;
       width: 180px;
       height: 44px;
-      padding: 13.5px 17.5px;
+      padding: 12px 0;
       outline: none;
+      -webkit-appearance: none;
+      border-radius: 0;
       @include media('<=tablet-lg') {
         flex-direction: column;
         width: 100%;
         margin: 0 0 10px;
+      }
+      @include placeholder {
+        color: #333;
       }
     }
   }
@@ -52,7 +66,35 @@
       @include media('<=tablet-lg') {
         width: 180px;
         margin: 0 auto 30px;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 16px;
+        text-indent: 20px;
+        height: 54px;
       }
+    }
+    &.double-inputs {
+      input[type="text"],
+      input[type="tel"] {
+        width: 400px;
+        @include media('<=tablet-lg') {
+          width: 100%;
+        }
+      }
+    }
+  }
+  + .category-description {
+    border: none;
+    margin: 10px 0 60px;
+    padding: 20px 0;
+    @include media('<=tablet-lg') {
+      border-top: none;
+      padding: 0 15px;
+      margin: 30px 0 50px;
+    }
+    .container {
+      padding: 0;
     }
   }
 }

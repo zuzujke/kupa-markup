@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   margin: 38px auto 66px;
+  padding: 0;
   @include media('<=tablet-lg') {
     flex-direction: column;
     position: relative;
@@ -9,8 +10,9 @@
 }
 
 .card-showcase {
-  width: 50%;
+  width: 47.4%;
   margin-right: 22.5px;
+  position: relative;
   @include media('<=tablet-lg') {
     width: 100%;
     padding: 0 15px;
@@ -64,10 +66,44 @@
       }
     }
   }
+  @include media('<=tablet-lg') {
+    .badge {
+      position: absolute;
+      top: 20px;
+      left: 15px;
+      &-hot {
+        width: 103px;
+        height: 26px;
+        background-image: url('../images/badge_best_saler.png');
+      }
+      &-sale {
+        width: 62px;
+        height: 26px;
+        background-image: url('../images/badge_sale.png');
+      }
+    }
+    .buy-parts {
+      position: absolute;
+      top: 17px;
+      right: 20px;
+      width: 38px;
+      height: 32px;
+      z-index: 2;
+      &.buy-parts-2 {
+        background-image: url('../images/badges_privat2.svg');
+      }
+      &.buy-parts-3 {
+        background-image: url('../images/badges_privat3.svg');
+      } 
+      &.buy-parts-4 {
+        background-image: url('../images/badges_privat4.svg');
+      } 
+    }
+  }
 }
 
 .card-info {
-  width: 50%;
+  width: 52.2%;
   margin-left: 22.5px;
   @include media('<=tablet-lg') {
     width: 100%;
@@ -89,24 +125,28 @@
     }
     &__title {
       color: #393939;
-      font-family: "Futura PT";
       font-size: 24px;
       font-weight: bold;
       letter-spacing: 0;
       line-height: 30px;
       order: 1;
+      span {
+        font-family: map-get($fonts, 'bold');
+      }
       @include media('<=tablet-lg') {
         position: absolute;
         top: 0;
         height: 60px;
         align-self: start;
+        overflow: hidden;
       }
       &__article {
         color: #B4B4B4;
         font-size: 14px;
         letter-spacing: 0;
         line-height: 14px;
-        margin: 15px 0 20px;
+        margin: 15px 0 0;
+        font-weight: 300;
         @include media('<=tablet-lg') {
           display: none;
         }
@@ -178,15 +218,29 @@
       align-items: center;
       order: 5;
       margin: 44px 0 0;
+      @include media('<=tablet-lg') {
+        margin: 24px 0;
+        display: none;
+      }
+      .stars {
+        height: 24px;
+        margin-right: 14px;
+        .star {
+          width: 24px;
+          height: 24px;
+          background-size: 100%;
+        }
+      }
     }
     
     &__reviews {
+      font-family: map-get($fonts,'montserrat');
       font-size: 18px;
       letter-spacing: 0;
       line-height: 22px;
-      padding-left: 10px;
+      padding-left: 14px;
       color: #393939;
-      border-left: 1px solid #393939;
+      border-left: 2px solid #E2E2E2;
       order: 5;
     }
     &__buy {
@@ -257,14 +311,27 @@
   }
 }
 
+.separator {
+  margin: -50px 0 50px;
+  padding: 0 15px;
+  &.is-desktop {
+    display: block;
+    margin: 0 auto;
+    @include media('<=tablet-lg') {
+      display: none;
+    }
+  }
+}
+
 .mobile_tabs {
   display: none;
   @include media('<=tablet-lg') {
     display: block;
+    margin: 0 0 100px;
   }
   .tabs {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     border-bottom: 2px solid #D6D6D6;
     .tab {
       font-size: 16px;
@@ -407,7 +474,10 @@
 }
 
 .similar-products {
-  margin: 20px 0;
+  margin: 100px 0 60px;
+  @include media('<tablet-lg') {
+    margin: 0 0 100px;
+  }
   .title {
     color: #3D3D3D;
     font-family: map-get($fonts, 'medium');
@@ -416,6 +486,8 @@
     letter-spacing: 0;
     line-height: 46px;
     text-align: center;
+    margin: 0 0 30px;
+    padding: 0;
   }
   .slick-list {
     margin: 0 -14px;
@@ -432,16 +504,21 @@
   }
   .catalog-grid__item {
     position: relative;
+    @include media('<=tablet-lg') {
+      height: 455px;
+    }
     .catalog-grid__item-overlay {
-      border: solid transparent;
+      border: 1px solid transparent;
+      padding: 22px 18px;
     }
     &:hover {
       overflow: visible;
-      height: 542px;
       box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
       .catalog-grid__item-overlay {
+        height: 542px;
         z-index: 0;
-        border: solid transparent;
+        border: 1px solid #E5002B;
+        padding: 22px 18px;
       }
     }
   }

@@ -38,8 +38,9 @@
   margin-left: 10px;
   @include media('<=tablet-lg') {
     width: 100%;
-    padding: 0 15px;
-    margin: 20px 0;
+    padding: 0 15px 15px;
+    margin: 20px 0 0;
+    text-align: center;
   }
   .tt {
     color: #333333;
@@ -75,9 +76,21 @@
     .btn {
       max-width: 388px;
       margin: 0 0 26px;
+      @include media('<=tablet-lg') {
+        max-width: 100%;
+        font-size: 14px;
+        text-align: center;
+        justify-content: center;
+      }
     }
     .btn-invert {
       max-width: 251px;
+      @include media('<=tablet-lg') {
+        max-width: 100%;
+        font-size: 14px;
+        text-align: center;
+        justify-content: center;
+      }
     }
   }
 }

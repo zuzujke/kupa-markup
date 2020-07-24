@@ -19304,14 +19304,27 @@ var $ = require('jquery');
 
 var range = {
   enable: function enable() {
+    var $from = $(".js-from");
+    var $to = $(".js-to");
+    var from = null;
+    var to = null;
     $(".js-range-slider").ionRangeSlider({
       type: "double",
       min: 0,
       max: 10000,
-      from: 200,
-      to: 5000,
-      prefix: "$"
+      from: $from.val(),
+      to: $to.val(),
+      onChange: function onChange(data) {
+        from = data.from;
+        to = data.to;
+        updateValues();
+      }
     });
+
+    var updateValues = function updateValues() {
+      $from.prop("value", from);
+      $to.prop("value", to);
+    };
   }
 };
 var _default = range;
@@ -19404,7 +19417,7 @@ var slider = {
             return '<span class="current">0' + (index + 1) + '</span>/' + '0' + slick.slideCount - 2;
           },
           responsive: [{
-            breakpoint: 1024,
+            breakpoint: 1025,
             settings: {
               slidesToShow: 1,
               dots: false,
@@ -19430,7 +19443,7 @@ var slider = {
         nextArrow: '<span class="arrow-right abs"></span>',
         prevArrow: '<span class="arrow-left abs"></span>',
         responsive: [{
-          breakpoint: 1024,
+          breakpoint: 1025,
           settings: {
             slidesToShow: 1,
             customPaging: function customPaging(slick, index) {
@@ -19454,7 +19467,7 @@ var slider = {
           nextArrow: '<span class="arrow-right default"></span>',
           prevArrow: '<span class="arrow-left default"></span>',
           responsive: [{
-            breakpoint: 1024,
+            breakpoint: 1025,
             settings: {
               slidesToShow: 1
             }
@@ -19472,7 +19485,7 @@ var slider = {
           fade: true,
           asNavFor: '.card-showcase-small',
           responsive: [{
-            breakpoint: 1024,
+            breakpoint: 1025,
             settings: {
               dots: true,
               fade: false
@@ -19499,7 +19512,7 @@ var slider = {
           fade: true,
           asNavFor: '.design-showcase-small',
           responsive: [{
-            breakpoint: 1024,
+            breakpoint: 1025,
             settings: {
               dots: true,
               fade: false
@@ -19530,7 +19543,7 @@ var slider = {
           nextArrow: '<span class="arrow-right default"></span>',
           prevArrow: '<span class="arrow-left default"></span>',
           responsive: [{
-            breakpoint: 1024,
+            breakpoint: 1025,
             settings: {
               slidesToShow: 1
             }
@@ -19552,7 +19565,7 @@ var slider = {
           nextArrow: '<span class="arrow-right default"></span>',
           prevArrow: '<span class="arrow-left default"></span>',
           responsive: [{
-            breakpoint: 1024,
+            breakpoint: 1025,
             settings: {
               dots: true,
               slidesToShow: 1,
@@ -19567,15 +19580,37 @@ var slider = {
     function projects() {
       var $parent = $('.grid3.projects-list');
 
-      if ($parent.length && window.matchMedia("(max-width: 1024px)").matches) {
+      if ($parent.length && window.matchMedia("(max-width: 1025px)").matches) {
         $parent.slick({
           responsive: [{
-            breakpoint: 1024,
+            breakpoint: 1025,
             settings: {
               dots: true,
               arrows: false,
               slidesToShow: 1,
               fade: false
+            }
+          }]
+        });
+      }
+    }
+
+    function relatedProducts() {
+      var $parent = $('.related-items');
+
+      if ($parent.length) {
+        $parent.slick({
+          dots: false,
+          arrows: true,
+          infinite: true,
+          autoplay: false,
+          slidesToShow: 4,
+          nextArrow: '<span class="arrow-right default"></span>',
+          prevArrow: '<span class="arrow-left default"></span>',
+          responsive: [{
+            breakpoint: 1025,
+            settings: {
+              slidesToShow: 1
             }
           }]
         });
@@ -19591,6 +19626,7 @@ var slider = {
       designReviews();
       designShowcaseSlider();
       projects();
+      relatedProducts();
     }
 
     return {

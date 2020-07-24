@@ -4,11 +4,14 @@
   width: 100%;
   height: inherit;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0;
   max-width: 1199px;
   @include media('<=tablet-lg') {
     padding: 0;
     max-width: 100%;
+  }
+  @include media('<desktop-sm', '>tablet-lg') {
+    padding: 0 15px;
   }
 }
 

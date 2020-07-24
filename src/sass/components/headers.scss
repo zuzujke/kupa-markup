@@ -1,6 +1,7 @@
 .section-title {
   display: block;
-  font-family: map-get($fonts, 'default');
+  font-family: map-get($fonts, 'medium');
+  font-weight: 500;
   font-size: 42px;
   line-height: 54px;
   letter-spacing: 0;
@@ -21,12 +22,13 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 15px;
+    left: 0;
     width: 99px;
     height: 4px;
     background-color: #E5002B;
     @include media('<=tablet-lg') {
       bottom: -4px;
+      left: 15px;
     }
   }
 }

@@ -67,48 +67,6 @@
         margin: 15px auto;
       }
     }
-    .modal-flex {
-      margin: -58px;
-      display: flex;
-      @include media('<=tablet-lg') {
-        flex-direction: column;
-        margin: -15px;
-      }
-      .modal-info {
-        padding: 15px 30px;
-        align-self: center;
-        width: 50%;
-        @include media('<=tablet-lg') {
-          width: 100%;
-        }
-        h2 {
-          font-size: 30px;
-          font-family: map-get($fonts, 'playfair');
-          font-weight: 400;
-          line-height: 30px;
-          margin: 0 0 15px;
-        }
-      }
-      .modal-image {
-        width: 50%;
-        @include media('<=tablet-lg') {
-          width: 100%;
-        }
-        img {
-          @include media('<=tablet-lg') {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-  &.success-modal {
-    .modal-wrapper {
-      width: 939px;
-      @include media('<=tablet-lg') {
-        width: 90%;
-      }
-    }
   }
   &-transition {
     transition: all 0.3s 0.12s;
@@ -127,15 +85,20 @@
   }
   &-close {
     position: absolute;
-    top: 0;
-    right: 0;
-    color: #aaa;
+    top: 20px;
+    right: 20px;
+    color: #000;
     background: none;
     border: 0;
-    font-size: 40px;
+    padding: 0;
     outline: none;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
     &:hover {
-      color: #777;
+      svg path {
+        fill: #777777;
+      }
     }
   }
   &-heading {
@@ -146,7 +109,13 @@
     letter-spacing: 0;
     line-height: 42px;
     margin: 0 0 20px;
-    text-align: center;
+    text-align: left;
+    @include media('<=tablet-lg') {
+      font-size: 18px;
+      line-height: 26px;
+      margin-top: 38px;
+      text-align: center;
+    }
   }
   &-body {
     text-align: center;
@@ -157,8 +126,98 @@
     letter-spacing: 0;
     line-height: 16px;
   }
+  &-3d {
+    .modal-wrapper {
+      padding: 58px 93px;
+      .modal-close {
+        top: 20px;
+        right: 20px;
+      }
+    }
+    .modal-heading {
+      text-align: center;
+      margin: 0 0 17px;
+    }
+    form {
+      input {
+        padding: 0;
+        height: 54px;
+        margin: 0 0 1px;
+        font-family: map-get($fonts, 'medium');
+        @include placeholder {
+          color: #333;
+        }
+      }
+      .btn {
+        height: 54px;
+        margin: 36px auto 30px;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 16px;
+        text-indent: 10px;
+      }
+    }
+  }
+  &.success-modal {
+    .modal-wrapper {
+      width: 939px;
+      height: 212px;
+      text-align: left;
+      padding: 0;
+      .modal-close {
+        top: 12px;
+        right: 13px;
+      }
+      .modal-flex {
+        margin: 0;
+        display: flex;
+        @include media('<=tablet-lg') {
+          flex-direction: column;
+          margin: -15px;
+        }
+        .modal-info {
+          padding: 40px;
+          text-align: left;
+          align-self: center;
+          flex: 1;
+          @include media('<=tablet-lg') {
+            width: 100%;
+          }
+          h2 {
+            font-size: 30px;
+            font-family: map-get($fonts, 'playfair');
+            font-weight: 400;
+            line-height: 30px;
+            margin: 0 0 15px;
+            @include media('<=tablet-lg') {
+              font-size: 18px;
+              line-height: 26px;
+              margin-top: 38px;
+            }
+          }
+        }
+        .modal-image {
+          width: 392px;
+          height: 212px;
+          @include media('<=tablet-lg') {
+            width: 100%;
+          }
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+      @include media('<=tablet-lg') {
+        width: 90%;
+        height: auto;
+      }
+    }
+  }
 }
 
 .lock-scroll {
   overflow: hidden;
 }
+

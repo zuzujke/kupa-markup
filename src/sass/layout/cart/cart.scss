@@ -1,13 +1,14 @@
 .cart-flex {
   display: flex;
   justify-content: space-between;
+  padding: 0;
   @include media('<=tablet-lg') {
     flex-direction: column;
   }
   .cart-order,
   .cart-form {
     width: 50%;
-    margin: 40px 0;
+    margin: 40px 0 68px;
     @include media('<=tablet-lg') {
       width: 100%;
     }
@@ -67,7 +68,7 @@
         input {
           height: 45px;
           width: 100%;
-          padding: 13.5px 17.5px;
+          padding: 10px 17.5px;
           border: 1px solid #D8D8D8;
           background-color: #FFFFFF;
           -webkit-appearance: none;
@@ -75,6 +76,10 @@
           appearance: none;
           @include placeholder {
             color: #C9BBBB;
+          }
+          &:focus {
+            outline: none;
+            background: #f2f2f2;
           }
         }
         select {

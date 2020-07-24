@@ -14,6 +14,7 @@
     text-align: center;
     font-family: map-get($fonts, 'medium');
     font-weight: 500;
+    font-size: 36px;
     @include media('<=tablet-lg') {
       font-size: 24px;
       font-weight: 500;
@@ -43,11 +44,14 @@
     z-index: 1;
     margin-top: -50px;
     padding-top: 84px;
+    @include media('<=tablet-lg') {
+      margin-bottom: 100px;
+    }
     &__item {
       position: relative;
       z-index: 1;
       @include media('<=tablet-lg') {
-        padding: 0 30px;
+        padding: 0 15px;
       }
       img {
         width: 270px;
@@ -103,6 +107,8 @@
       &-date {
         font-family: map-get($fonts, 'montserrat');
         color: #A5A5A5;
+        font-size: 14px;
+        font-weight: 200;
       }
     }
     .slick-arrow {

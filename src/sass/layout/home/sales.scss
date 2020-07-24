@@ -1,8 +1,11 @@
 .sales {
-  margin: 50px 0;
+  margin: 88px 0 50px;
   background: #FCE2E7;
   @include media('<=tablet-lg') {
     padding: 20px 15px;
+  }
+  .container {
+    padding: 0;
   }
   .sales-info {
     width: 50%;
@@ -40,6 +43,9 @@
     padding-left: 40px;
     @include media('<=tablet-lg') {
       display: none;
+    }
+    img {
+      margin-top: -38px;
     }
   }
 }
